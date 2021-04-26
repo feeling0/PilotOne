@@ -1,5 +1,5 @@
-#include <stdio.h>
+#include "print.h"
 
 void main() {
-    printf("Hello PilotOne.\n");
+    print_hello();
 }
