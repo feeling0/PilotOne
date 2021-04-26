@@ -1,12 +1,17 @@
-a.out : print.o main.o
-	gcc -o a.out print.o main.o
+CC=gcc
+CFLAGS=-g -Wall
+TARGET=a.out
+OBJS=print.o main.o
+
+$(TARGET) : $(OBJS)
+	$(CC) -o $@ $^
 
 print.o : print.c
-	gcc -c -o print.o print.c
+	$(CC) -c -o $@ $^
 
 main.o : main.c
-	gcc -c -o main.o main.c
+	$(CC) -c -o $@ $^
 
 clean :
-	rm print.o main.o a.out
+	rm $(OBJS) $(TARGET)
 
